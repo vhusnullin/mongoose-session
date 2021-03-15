@@ -67,11 +67,12 @@ try {
 
   let driverJob = await session.find(Job, { title: 'Plumber' });
   driverJob.location = 'San Francisco';
-  await session.findOneAndUpdate(Job, { _id: driverJob._id }, driverJob);
+  await session.updateOne(Job, { _id: driverJob._id }, driverJob);
   await session.commitTransaction();
 }
 catch(err) {
   await session.abortTransaction();
+  throw err;
 }
 
 ```

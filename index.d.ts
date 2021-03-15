@@ -6,6 +6,9 @@ interface ModelDefinition {
 	model: mongoose.Model<mongoose.Document>
 }
 
+import * as mongodb from 'mongodb';
+import * as mongoose from 'mongoose';
+
 declare class MongooseSession {
 	constructor(models: ModelDefinition[], connection: mongoose.Connection);
 
@@ -43,4 +46,8 @@ declare class MongooseSession {
 	find<T>(domainClass: { new(): T }, filter: mongoose.FilterQuery<T>, projection?: any | null, options?: mongoose.QueryOptions | null): mongoose.QueryWithHelpers<Array<T>, any>;
 
 	findOneAndUpdate<T>(domainClass: { new(): T }, filter?: mongoose.FilterQuery<T>, update?: mongoose.UpdateQuery<T>, options?: mongoose.QueryOptions | null): mongoose.QueryWithHelpers<T | null, any>;
+
+	update<T>(domainClass: { new(): T }, filter?: mongoose.FilterQuery<T>, update?: mongoose.UpdateQuery<T>, options?: mongoose.QueryOptions | null): mongoose.QueryWithHelpers<mongodb.WriteOpResult['result'], any>;
+	updateMany<T>(domainClass: { new(): T }, filter?: mongoose.FilterQuery<T>, update?: mongoose.UpdateQuery<T>, options?: mongoose.QueryOptions | null): mongoose.QueryWithHelpers<mongodb.UpdateWriteOpResult['result'], any>;
+	updateOne<T>(domainClass: { new(): T }, filter?: mongoose.FilterQuery<T>, update?: mongoose.UpdateQuery<T>, options?: mongoose.QueryOptions | null): mongoose.QueryWithHelpers<mongodb.UpdateWriteOpResult['result'], any>;
 }
