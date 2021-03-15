@@ -99,6 +99,21 @@ function MongooseSession(models, connection) {
 		return this.getModel(domainClass).findOneAndUpdate(conditions, update, options);
 	};
 
+	this.update = (conditions, doc, options) => {
+		options = this.applySessionToOptions(options);
+		return this.getModel(domainClass).update(conditions, doc, options);
+	}
+
+	this.updateMany = (conditions, doc, options) => {
+		options = this.applySessionToOptions(options);
+		return this.getModel(domainClass).updateMany(conditions, doc, options);
+	}
+
+	this.updateOne = (conditions, doc, options) => {
+		options = this.applySessionToOptions(options);
+		return this.getModel(domainClass).updateOne(conditions, doc, options);
+	}
+
 	// ------------------------------------------------------------------ PRIVATE --------------------------------------------------------------
 	this.getModel = (domainClass) => {
 		return this.models.find(m => m.domainClass === domainClass).model;

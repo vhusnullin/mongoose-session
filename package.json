@@ -1,0 +1,14 @@
+{
+	"name": "mongoose-session",
+	"version": "0.0.1",
+	"description": "",
+	"author": "vhusnullin",
+	"private": true,
+	"license": "MIT",
+	"scripts": {},
+	"dependencies": {
+		"mongodb": "^3.6.4",
+		"mongoose": "^5.12.0"
+	},
+	"devDependencies": {}
+}
