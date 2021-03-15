@@ -9,7 +9,7 @@ $ npm install mongoose-session
 
 ## Define Domain types: domain-types.ts
 
-```bash
+```typescript
 interface User {
   firstName: string;
   lastName: string;
@@ -23,7 +23,7 @@ interface Job {
 
 ## Mongoose Info: mongoose-info.ts
 
-```bash
+```typescript
 import * as Mongoose from 'mongoose';
 
 const userSchema = new Mongoose.Schema({
@@ -54,7 +54,7 @@ You just create a new instance of MongooseSession class and use it as a single o
 Transaction management is easy and testability is great.
 MongooseSession class exposes same interface as the actual Mongoose.Model
 
-```bash
+```typescript
 import { connection, models } from 'mongoose-info.ts';
 import { User, Job } from 'domain-types.ts';
 import { MongooseSession } from 'mongoose-session';
