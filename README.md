@@ -57,6 +57,7 @@ MongooseSession class exposes same interface as the actual Mongoose.Model
 ```bash
 import { connection, models } from 'mongoose-info.ts';
 import { User, Job } from 'domain-types.ts';
+import { MongooseSession } from 'mongoose-session';
 
 let session = new MongooseSession(models, connection);
 try {
