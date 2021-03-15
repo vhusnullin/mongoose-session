@@ -76,10 +76,10 @@ catch(err) {
 ```
 
 ## Important
-Create single MongooseSession object per each web request.
-Don't forget to call commitTransaction.
-Don't forget to await on Commit, Start and Abort transaction methods.
+- Create single MongooseSession object per each web request.
+- Don't forget to call commitTransaction.
+- Don't forget to await on Commit, Start and Abort transaction methods.
 
 ## Important MongoDB Transaction Support
-MongoDB supports transactions starting from version 4.0
-In order to use transactions - you must start MongoDB with --replSet parameter and some default name of your replSet - for standalone MongoDB just use --replSet rs0. Or go to mongodb.conf and specify replSet=rs0 there. See MongoDB documentation for more info.
+- MongoDB supports transactions starting from version 4.0
+- In order to use transactions - you must start MongoDB with --replSet parameter and some default name of your replSet - for standalone MongoDB just use --replSet rs0. Or go to mongodb.conf and specify replSet=rs0 there. See MongoDB documentation for more info.
