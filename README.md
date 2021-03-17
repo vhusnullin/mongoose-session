@@ -4,7 +4,7 @@ Simplifies Session/Transaction use of mongoose. Makes it more Hibernate/EF style
 ## Installation
 
 ```bash
-$ npm install mongoose-session
+$ npm install ****
 ```
 
 ## Define Domain types: domain-types.ts
